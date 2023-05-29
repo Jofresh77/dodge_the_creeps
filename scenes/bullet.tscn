@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuq12lcii5gn7"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_tbyk4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6kfb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yuuq"]
+size = Vector2(12, 12)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_tbyk4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.875, -1.875)
+scale = Vector2(12.25, 12.25)
+texture = SubResource("CanvasTexture_6kfb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -2)
+shape = SubResource("RectangleShape2D_3yuuq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
