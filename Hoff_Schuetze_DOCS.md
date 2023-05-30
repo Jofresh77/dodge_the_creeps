@@ -17,6 +17,13 @@ c) Welche Schritte sind notwendig, um Kollisionen im Spiel zu implementieren?
 
 # Task 2:
 ## Eliot:
+**Animated Background**
+- Edit sprite on Gimp
+- Then combine with TextureRec Node and AnimatedTexture in Godot
+- Configure Animated Texture
+**Player Animation**
+- Modify the player script, so that the rotation of the Player Node is according to the direction we're using
+- Using angle() and deg_to_rad() 
 ## Eve:
 **Font**:
 - Go to HUD scene
@@ -37,6 +44,13 @@ This creates randomises the float values that the Color needs and puts it into t
 
 # Task 3:
 ## Eliot:
+**Ennemy shooting**
+- Add child Timer Node to Mob Node (5s, oneshot and autostart)
+- Create signal inside the Mob script and emit it when Timer is timeout
+- Create bullet scene (RigidBody2D (collision), Sprite2D, CollisionShape2D (collision detection) and VisibleOnScreenNotification (despawn when out of screen))
+- Connect mob shoot signal in main script, after mob instanciation in _on_mob_timer_timeout is called
+- Add Callback function as parameter of the Callabale function
+- Inside the Callable, do the programming for instanciating, location, rotation and velocity computation
 ## Eve:
 **Different Speeds**
 The speed of the enemies is randomly chosen and can either be normal or very slow
