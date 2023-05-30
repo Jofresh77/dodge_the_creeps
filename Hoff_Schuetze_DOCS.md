@@ -22,6 +22,17 @@ c) Welche Schritte sind notwendig, um Kollisionen im Spiel zu implementieren?
 - Go to HUD scene
 - import a .ttf file into the file system. It has to go directly in the explorer, because you can't import assets directly into Godot
 - In Godot, go to the Textfield you want to change
-    - under _Control/Theme Overrides/Fonts_ you can insert the Font
-    - either by draging it in or by choosing _Load_ or _Quick Load_
+	- under _Control/Theme Overrides/Fonts_ you can insert the Font
+	- either by draging it in or by choosing _Load_ or _Quick Load_
 - It may be a good idea to change the font size under _Control/Theme Overrides/Font Sizes_
+**Mob Sprite Color**
+Each Mob has a different color
+- The sprite has to have a grayscale colour to ensure that the colour changes appropriately 
+-> a blue undertone will always result in a blue tint
+- using the modulate attribute of a sprite makes it possible to change the color
+- in the mob script add 
+`$AnimatedSprite2D.modulate = Color(randf(),randf(),randf())`
+This creates randomises the float values that the Color needs and puts it into the modulate attribute
+- The code has to go into _ready. Since each mob uses the code individually, each created mob, will have different colours
+
+

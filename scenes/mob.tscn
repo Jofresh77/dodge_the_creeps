@@ -55,10 +55,10 @@ script = ExtResource("1_gbpac")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_usx81")
 animation = &"fly"
-frame_progress = 0.45195
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
