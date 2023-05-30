@@ -32,9 +32,15 @@ func _on_mob_timer_timeout():
 	mob.rotation = direction
 	
 	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-	var slow_velocity = Vector2(randf_range(40.0, 80), 0.0)
+	var slow_velocity = Vector2(randf_range(50.0, 80.0), 0.0)
+	var rand = randi() % 3
+	
+	if(rand == 2):
+		mob.linear_velocity = slow_velocity.rotated(direction)
+	else:
+		mob.linear_velocity = velocity.rotated(direction)
 	# shift between different speeds in the game
-	mob.linear_velocity = velocity.rotated(direction)
+
 	
 	mob.shoot.connect(_on_shoot_signal.bind(mob))
 	add_child(mob)
@@ -56,3 +62,5 @@ func _on_shoot_signal(mob):
 	bullet.position = mob.global_position
 	bullet.velocity = $Player.global_position - bullet.position
 	add_child(bullet)
+
+

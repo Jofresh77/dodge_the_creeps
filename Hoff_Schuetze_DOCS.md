@@ -35,4 +35,13 @@ Each Mob has a different color
 This creates randomises the float values that the Color needs and puts it into the modulate attribute
 - The code has to go into _ready. Since each mob uses the code individually, each created mob, will have different colours
 
+# Task 3:
+## Eliot:
+## Eve:
+**Different Speeds**
+The speed of the enemies is randomly chosen and can either be normal or very slow
+- in Main gd _on_mob_timer_timeout()  add code for a randomly selected velocity float value and set it low
+- add a random value (in this case with a range of 0-2) and run an if statement to determine which speed is chosen for the mob
+(I made the mistake of checking if the value was 3 and not 2, as I forgot that ranges start at 0 and not 1)
+- then the enemies have randomly determined speeds
 
